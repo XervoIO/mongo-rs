@@ -1,0 +1,29 @@
+#!/bin/bash
+
+: ${ADMIN_TOKEN:=Password}
+
+: ${COMPANY_NAME:=company-name}
+
+# API location
+: ${API_HOST:=api-company-name.mod.ec}
+: ${API_PORT:=443}
+: ${API_TLS:=true}
+
+# The admin username/password used to manage MongoDB hosts.
+# SHOULD BE THE VALUE SPECIFIED IN BES variables FILE
+: ${MONGO_HOST_ADMIN_USER:=ModulusRoot}
+: ${MONGO_HOST_ADMIN_PASS:=Password}
+
+# The name of the mongo replica set
+: ${REPL_SET_NAME:=rs.$COMPANY_NAME}
+
+# MMS configuration
+: ${MMS_API_KEY:=12345}
+: ${MMS_BASE_URL:=https://mms.mongodb.com}
+
+: ${S3_ACCESS_KEY:=S3_ACCESS_KEY}
+: ${S3_SECRET_KEY:=S3_SECRET_KEY}
+: ${S3_BUCKET_MONGO_BACKUPS:=S3_BUCKET_MONGO_BACKUPS}
+
+# Instrumental API token
+: ${INSTRUMENTAL_TOKEN:=Password}

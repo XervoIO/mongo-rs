@@ -1,0 +1,15 @@
+systemLog:
+  verbosity: 1
+storage:
+  dbPath: "/data"
+  smallFiles: true
+net:
+  http:
+    enabled: true
+    RESTInterfaceEnabled: true
+security:
+  authorization: "enabled"
+replication:
+  replSetName: "$REPL_SET_NAME"
+security:
+  keyFile: "/opt/modulus/conf/keyfile"

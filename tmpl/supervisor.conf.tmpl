@@ -1,0 +1,16 @@
+[supervisord]
+logfile=/logs/supervisord.log ; (main log file;default $CWD/supervisord.log)
+pidfile=/var/run/supervisord.pid ; (supervisord pidfile;default supervisord.pid)
+childlogdir=/var/log/supervisor            ; ('AUTO' child log dir, default $TEMP)
+nodaemon=true
+
+[supervisorctl]
+serverurl=unix:///var/run/supervisor.sock ; use a unix:// URL  for a unix socket
+
+[program:mongo]
+command=/usr/local/bin/mongod --config /opt/modulus/conf/mongo.conf
+stdout_logfile=/logs/mongo.log
+stdout_logfile_maxbytes=256MB
+autorestart=true
+retries=100
+priority=2

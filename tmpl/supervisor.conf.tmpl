@@ -8,7 +8,7 @@ nodaemon=true
 serverurl=unix:///var/run/supervisor.sock ; use a unix:// URL  for a unix socket
 
 [program:mongo]
-command=/usr/local/bin/mongod --config /opt/modulus/conf/mongo.conf
+command=/usr/bin/mongod --config /opt/modulus/conf/mongo.conf
 stdout_logfile=/logs/mongo.log
 stdout_logfile_maxbytes=256MB
 autorestart=true

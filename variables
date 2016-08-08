@@ -25,5 +25,7 @@
 : ${S3_SECRET_KEY:=S3_SECRET_KEY}
 : ${S3_BUCKET_MONGO_BACKUPS:=S3_BUCKET_MONGO_BACKUPS}
 
+: ${MONGO_TYPE:=primary}
+
 # Instrumental API token
 : ${INSTRUMENTAL_TOKEN:=Password}

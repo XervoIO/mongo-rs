@@ -1,6 +1,7 @@
 #!/bin/bash
 
-if [[ $MONGO_TYPE != 'secondary' ]]; then
+#     THIS IS BY DESIGN; look at the tmpl file
+if [[ $RUN_BACKUPS != true ]]; then
     exit;
 fi
 

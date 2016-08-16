@@ -40,3 +40,5 @@ eval "cat <<EOF
 $(<$DIR/../tmpl/create_admin_user.tmpl.js)
 EOF
 " > $DIR/../conf/create_admin_user.js
+
+chmod +x $DIR/../conf/mongo-backup.sh

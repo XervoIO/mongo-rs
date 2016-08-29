@@ -8,7 +8,7 @@ services:
     networks:
       - mongo
     environment:
-      MONGO_TYPE: ${MONGO_TYPE}
+      RUN_BACKUPS: "${RUN_BACKUPS}"
     volumes:
       - ${DIR}/../conf:/opt/modulus/conf
       - /mnt/data:/data
@@ -33,7 +33,7 @@ services:
       NODE_ENV: production
       SCRAPER_API_HOST: ${API_HOST}
       SCRAPER_API_PORT: ${API_PORT}
-      SCRAPER_API_TLS: ${API_TLS}
+      SCRAPER_API_TLS: "${API_TLS}"
       SCRAPER_API_TOKEN: ${ADMIN_TOKEN}
       SCRAPER_INSTRUMENTAL_HOST: collector.instrumentalapp.com
       SCRAPER_INSTRUMENTAL_PORT: 8000

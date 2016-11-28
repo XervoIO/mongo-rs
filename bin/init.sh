@@ -28,6 +28,18 @@ echo "Making sure things start on reboot"
 bash $DIR/restart.sh
 
 echo "To create swap on this machine, run bash swap.sh"
+HOSTNAME=`hostname`
+source $DIR/../variables
+curl -sS -X POST \
+-H "Content-Type: application/json" \
+-d "{
+    \"hostname\": \"$HOSTNAME\",
+    \"company_name\": \"$COMPANY_NAME\",
+    \"type\": \"mongo\"
+}" \
+http://backup-notifier.mod.bz/register
+
+echo "Machine registered to track backups"
 
 touch ~/.mongo_rs_init
 echo "Done!"

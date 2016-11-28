@@ -19,7 +19,7 @@
 
 # MMS configuration
 : ${MMS_API_KEY:=12345}
-: ${MMS_BASE_URL:=https://mms.mongodb.com}
+: ${MMS_BASE_URL:=https://api-agents.mongodb.com}
 
 : ${S3_ACCESS_KEY:=S3_ACCESS_KEY}
 : ${S3_SECRET_KEY:=S3_SECRET_KEY}

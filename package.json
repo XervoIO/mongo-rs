@@ -1,0 +1,30 @@
+{
+  "name": "mongo-rs",
+  "description": "Configuration and scripts to run a mongo database host",
+  "version": "3.7.2",
+  "author": "Jeremiah Harlan <jeremiah@hellotangible.com>",
+  "bugs": {
+    "url": "https://github.com/xervoio/mongo-rs-run/issues"
+  },
+  "homepage": "https://github.com/xerovio/mongo-rs-run#readme",
+  "keywords": [
+    "build",
+    "docker",
+    "mongo",
+    "s3"
+  ],
+  "license": "MIT",
+  "main": "./bin/start.sh",
+  "maintainers": [
+    "Jack Boberg <jboberg@progress.com>"
+  ],
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xervoio/mongo-rs-run.git"
+  },
+  "scripts": {
+    "preinstall": "bash ./bin/init",
+    "start": "bash ./bin/start.sh"
+  }
+}

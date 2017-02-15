@@ -45,8 +45,7 @@ services:
       SCRAPER_SLOW_QUERIES_BATCH_SIZE: 20
       SCRAPER_MONGO_LOG_PATH: /mnt/mongo.log
     volumes:
-      - ${DIR}/../conf:/opt/modulus/conf
-      - /mnt/logs:/logs
+      - /var/run/docker.sock:/var/run/docker.sock
     ports:
       - "8080:8080"
     logging:

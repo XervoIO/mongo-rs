@@ -1,0 +1,25 @@
+version: '2'
+
+services:
+  mongo:
+    container_name: mongo
+    image: mongo:{{mongo.version}}
+    hostname: mongo
+    networks:
+      - {{mongo.install}}
+    volumes:
+      - /opt/conf/{{mongo.install}}:/opt/conf
+      - /mnt/data:/data
+    ports:
+      - "27017:27017"
+      - "28017:28017"
+    logging:
+      driver: json-file
+      options:
+        max-file: "4"
+        max-size: "25m"
+    restart: unless-stopped
+    command: mongod --config /opt/conf/mongo.conf
+
+networks:
+  {{mongo.install}}:

@@ -3,6 +3,9 @@
   "description": "Configuration and scripts to run a mongo database host",
   "version": "3.7.2",
   "author": "Jeremiah Harlan <jeremiah@hellotangible.com>",
+  "bin": {
+    "mongo-rs": "./bin/mongo-rs"
+  },
   "bugs": {
     "url": "https://github.com/xervoio/mongo-rs-run/issues"
   },

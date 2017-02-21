@@ -23,7 +23,7 @@ services:
 
   scraper:
     container_name: scraper
-    image: onmodulus/scraper:4.1.2
+    image: xervo/scraper:5.0.0
     networks:
       - {{mongo.install}}
     environment:
@@ -41,7 +41,7 @@ services:
       SCRAPER_SLOW_QUERIES_SEND_INTERVAL: 900000
       SCRAPER_SLOW_QUERIES_PARALLEL_SEND: 5
       SCRAPER_SLOW_QUERIES_BATCH_SIZE: 20
-      SCRAPER_MONGO_LOG_PATH: /logs/mongo.log
+      DOCKER_SOCKET: /var/run/docker.sock
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
     ports:

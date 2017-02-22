@@ -1,5 +1,0 @@
-#!/usr/bin/env bash
-set -a
-
-MONGO_VERSION="2.6.7"
-SCRAPER_VERSION="4.1.2"

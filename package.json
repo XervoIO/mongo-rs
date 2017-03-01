@@ -1,7 +1,7 @@
 {
-  "name": "mongo-rs",
+  "name": "@xervo/mongo-rs",
   "description": "Configuration and scripts to run a mongo database host",
-  "version": "3.7.2",
+  "version": "0.0.1",
   "author": "Jeremiah Harlan <jeremiah@hellotangible.com>",
   "bin": {
     "mongo-rs": "./bin/mongo-rs"
@@ -21,7 +21,6 @@
   "maintainers": [
     "Jack Boberg <jboberg@progress.com>"
   ],
-  "private": true,
   "repository": {
     "type": "git",
     "url": "git+https://github.com/xervoio/mongo-rs-run.git"

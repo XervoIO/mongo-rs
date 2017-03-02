@@ -1,7 +1,7 @@
 {
   "name": "@xervo/mongo-rs",
   "description": "Configuration and scripts to run a mongo database host",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "author": "Jeremiah Harlan <jeremiah@hellotangible.com>",
   "bin": {
     "mongo-rs": "./bin/mongo-rs"

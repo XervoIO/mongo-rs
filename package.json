@@ -1,0 +1,43 @@
+{
+  "name": "@xervo/mongo-rs",
+  "description": "Configuration and scripts to run a mongo database host",
+  "version": "0.0.1",
+  "author": "Jeremiah Harlan <jeremiah@hellotangible.com>",
+  "bin": {
+    "mongo-rs": "./bin/mongo-rs"
+  },
+  "bugs": {
+    "url": "https://github.com/xervoio/mongo-rs-run/issues"
+  },
+  "homepage": "https://github.com/xerovio/mongo-rs-run#readme",
+  "keywords": [
+    "build",
+    "docker",
+    "mongo",
+    "s3"
+  ],
+  "license": "MIT",
+  "main": "./bin/start.sh",
+  "maintainers": [
+    "Jack Boberg <jboberg@progress.com>"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xervoio/mongo-rs-run.git"
+  },
+  "scripts": {
+    "lint": "standard",
+    "start": "node lib/index"
+  },
+  "dependencies": {
+    "@xervo/logger": "2.0.0",
+    "async": "2.1.4",
+    "commander": "2.9.0",
+    "handlebars": "4.0.6",
+    "mkdirp": "0.5.1",
+    "prompt": "1.0.0"
+  },
+  "devDependencies": {
+    "standard": "8.6.0"
+  }
+}

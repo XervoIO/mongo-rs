@@ -1,0 +1,91 @@
+version: '2'
+
+services:
+  mongo:
+    container_name: mongo
+    image: mongo:{{mongo.version}}
+    hostname: mongo
+    networks:
+      - {{mongo.install}}
+    volumes:
+      - /opt/conf/{{mongo.install}}:/opt/conf
+      - /mnt/data:/data
+    ports:
+      - "27017:27017"
+      - "28017:28017"
+    logging:
+      driver: json-file
+      options:
+        max-file: "4"
+        max-size: "25m"
+    restart: unless-stopped
+    command: mongod --config /opt/conf/mongo.conf
+
+{{#if scraper.enable}}
+  scraper:
+    container_name: scraper
+    image: xervo/scraper:5.0.0
+    networks:
+      - {{mongo.install}}
+    environment:
+      DEBUG: scraper*,-scraper:entry
+      NODE_ENV: production
+      SCRAPER_API_HOST: {{scraper.apiHost}}
+      SCRAPER_API_PORT: {{scraper.apiPort}}
+      SCRAPER_API_TLS: "{{scraper.apiTLS}}"
+      SCRAPER_API_TOKEN: {{scraper.apiToken}}
+      SCRAPER_INSTRUMENTAL_HOST: collector.instrumentalapp.com
+      SCRAPER_INSTRUMENTAL_PORT: 8000
+      SCRAPER_INSTRUMENTAL_TOKEN: 267a2a7e2d083df0207c1ad8bad41897
+      SCRAPER_SLOW_QUERIES_PER_DB: 10
+      SCRAPER_SLOW_QUERIES_MIN_DURATION: 10
+      SCRAPER_SLOW_QUERIES_SEND_INTERVAL: 900000
+      SCRAPER_SLOW_QUERIES_PARALLEL_SEND: 5
+      SCRAPER_SLOW_QUERIES_BATCH_SIZE: 20
+      DOCKER_SOCKET: /var/run/docker.sock
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    ports:
+      - "8080:8080"
+    logging:
+      driver: json-file
+      options:
+        max-file: "4"
+        max-size: "25m"
+    restart: unless-stopped
+    depends_on:
+      - mongo
+{{/if}}
+
+{{#if backup.enable}}
+  backup:
+    container_name: backup
+    image: harlanj/mongo-cron-backup:0.1.1
+    networks:
+      - {{mongo.install}}
+    environment:
+      NODE_ENV: production
+      MONGO_HOST: mongo:27017
+      MONGO_USERNAME: {{mongo.username}}
+      MONGO_PASSWORD: {{mongo.password}}
+      MONGO_OPLOG: "true"
+      MONGO_OUTPUT_DIR: /backup
+      LOG_LEVEL: info
+      CRON_SCHEDULE: 0 0,12 * * *
+      AWS_S3_ACCESS_KEY: {{backup.s3AccessKey}}
+      AWS_S3_SECRET_KEY: {{backup.s3SecretKey}}
+      AWS_S3_BUCKET: {{backup.s3Bucket}}
+    logging:
+      driver: json-file
+      options:
+        max-file: "4"
+        max-size: "25m"
+    volumes:
+      - /mnt/backup:/backup
+    restart: unless-stopped
+    depends_on:
+      - mongo
+{{/if}}
+
+networks:
+  {{mongo.install}}:

@@ -7,7 +7,7 @@
     "mongo-rs": "./bin/mongo-rs"
   },
   "bugs": {
-    "url": "https://github.com/theworkflow/mongo-rs-run/issues"
+    "url": "https://github.com/theworkflow/mongo-rs/issues"
   },
   "contributors": [
     "Jeremiah Harlan <jeremiah.harlan@gmail.com>",
@@ -24,7 +24,7 @@
   "devDependencies": {
     "standard": "8.6.0"
   },
-  "homepage": "https://github.com/theworkflow/mongo-rs-run#readme",
+  "homepage": "https://github.com/theworkflow/mongo-rs#readme",
   "keywords": [
     "build",
     "database",
@@ -36,7 +36,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/theworkflow/mongo-rs-run.git"
+    "url": "git+https://github.com/theworkflow/mongo-rs.git"
   },
   "scripts": {
     "lint": "standard"

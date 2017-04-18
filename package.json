@@ -1,7 +1,7 @@
 {
   "name": "mongo-rs",
   "description": "Configuration and scripts to run a mongo database host",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "author": "Jeremiah Harlan <jeremiah.harlan@gmail.com>",
   "bin": {
     "mongo-rs": "./bin/mongo-rs"

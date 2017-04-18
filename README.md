@@ -1,17 +1,17 @@
 mongo-rs
 ========
 
-Creates mongo database host with an optional backup and scraper container
+Creates mongo database host with an optional backup container
 
 ## Installation
 
 ```
-$ npm install -g @xervo/mongo-rs
+$ npm install -g mongo-rs
 ```
 
 ## Creating mongo database host
 
-Orchestrate a new mongo host that will have a running mongo instance, a backup container, and metrics for mongo. The metrics and backup containers are optional.
+Orchestrate a new mongo host that will have a running mongo instance and a backup container. The backup container is optional.
 
 - [Create services](#create-services)
 - [Add admin user to mongo](#create-mongo-admin-user)
